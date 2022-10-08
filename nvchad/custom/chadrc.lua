@@ -2,27 +2,28 @@
 
 local M = {}
 
-local override = require "custom.override"
+--local override = require "custom.override"
 
 -- make sure you maintain the structure of `core/default_config.lua` here,
 -- example of changing theme:
 
 M.ui = {
-   theme = "palenight",
+  theme = "palenight",
 }
 
-M.plugins = {
-   options = {
-      lspconfig = {
-         setup_lspconf = "custom.plugins.lspconfig",
-      },
-   },
-   override = {
-      ["kyazdani42/nvim-tree.lua"] = override.nvimtree,
-      ["nvim-treesitter/nvim-treesitter"] = override.treesitter,
-   },
-   user = require "custom.plugins",
-}
+M.plugins = require "custom.plugins"
+--{
+--   options = {
+--      lspconfig = {
+--         setup_lspconf = "custom.plugins.lspconfig",
+--      },
+--   },
+--   override = {
+--      ["kyazdani42/nvim-tree.lua"] = override.nvimtree,
+--      ["nvim-treesitter/nvim-treesitter"] = override.treesitter,
+--   },
+--   user = require "custom.plugins",
+--}
 
 M.mappings = require "custom.mappings"
 

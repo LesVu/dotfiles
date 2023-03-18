@@ -1,64 +1,20 @@
--- Just an example, supposed to be placed in /lua/custom/
-
+---@type ChadrcConfig
 local M = {}
 
---local override = require "custom.override"
-
--- make sure you maintain the structure of `core/default_config.lua` here,
--- example of changing theme:
+-- Path to overriding theme and highlights files
+local highlights = require "custom.highlights"
 
 M.ui = {
   theme = "palenight",
+  theme_toggle = { "onedark", "one_light" },
+
+  hl_override = highlights.override,
+  hl_add = highlights.add,
 }
 
-M.plugins = require "custom.plugins"
---{
---   options = {
---      lspconfig = {
---         setup_lspconf = "custom.plugins.lspconfig",
---      },
---   },
---   override = {
---      ["kyazdani42/nvim-tree.lua"] = override.nvimtree,
---      ["nvim-treesitter/nvim-treesitter"] = override.treesitter,
---   },
---   user = require "custom.plugins",
---}
+M.plugins = "custom.plugins"
 
+-- check core.mappings for table structure
 M.mappings = require "custom.mappings"
 
 return M
-
--- M.options = {
---    -- load your options here or load module with options
---    user = function() end,
---
---    nvChad = {
---       update_url = "https://github.com/NvChad/NvChad",
---       update_branch = "main",
---    },
--- }
---
--- M.ui = {
---    -- hl = highlights
---    hl_add = {},
---    hl_override = {},
---    changed_themes = {},
---    theme_toggle = { "onedark", "one_light" },
---    theme = "onedark", -- default theme
---    transparency = false,
--- }
---
--- M.plugins = {
---    override = {},
---    remove = {},
---    user = {},
---    options = {
---       lspconfig = {
---          setup_lspconf = "", -- path of lspconfig file
---       },
---    },
--- }
---
--- -- check core.mappings for table structure
--- M.mappings = require "core.mappings"

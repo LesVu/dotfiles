@@ -5,3 +5,4 @@
 --   pattern = "*",
 --   command = "tabdo wincmd =",
 -- })
+vim.g.luasnippets_path = os.getenv "HOME" .. "/.config/nvim/lua/custom/snippets"

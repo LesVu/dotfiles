@@ -9,7 +9,8 @@ local b = null_ls.builtins
 local sources = {
   -- webdev stuff
   -- b.formatting.deno_fmt,
-  b.formatting.prettier,
+  -- b.formatting.prettier,
+  b.formatting.prettierd,
 
   -- Lua
   b.formatting.stylua.with {
@@ -38,7 +39,7 @@ null_ls.setup {
         buffer = bufnr,
         callback = function()
           -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-          vim.lsp.buf.format { bufnr = bufnr }
+          vim.lsp.buf.format { timeout_ms = 3000, bufnr = bufnr }
           --vim.lsp.buf.formatting_sync(nil, 3000)
         end,
       })

@@ -10,7 +10,12 @@ local sources = {
   -- webdev stuff
   -- b.formatting.deno_fmt,
   -- b.formatting.prettier,
-  b.formatting.prettierd,
+  b.formatting.prettierd.with {
+    env = {
+      PRETTIERD_DEFAULT_CONFIG = os.getenv "HOME"
+        .. "/.config/nvim/lua/custom/configs/formatter_sources/.prettierrc.json",
+    },
+  },
 
   -- Lua
   b.formatting.stylua.with {

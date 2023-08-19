@@ -38,7 +38,7 @@ M.mason = {
     "bash-language-server",
     "json-lsp",
     "yaml-language-server",
-    "rust-analyzer",
+    -- "rust-analyzer",
   },
 }
 

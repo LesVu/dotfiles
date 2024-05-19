@@ -1,8 +1,0 @@
-alias ll="ls -lah"
-alias la="ls -ah"
-alias l="ls -h"
-alias up="pkg upg"
-alias e="exit"
-alias lg="lazygit"
-alias lv="lvim"
-export PATH="~/.local/bin:~/.cargo/bin:$PATH"

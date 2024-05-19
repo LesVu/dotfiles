@@ -1,21 +1,33 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+local on_attach = require("nvchad.configs.lspconfig").on_attach
+local on_init = require("nvchad.configs.lspconfig").on_init
+local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-
--- if you just want default config for the servers then put them in a table
 local servers = { "html", "bashls", "jsonls", "cssls" }
 
+-- lsps with default config
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
+    on_init = on_init,
     capabilities = capabilities,
   }
 end
 
+-- typescript
+lspconfig.tsserver.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+}
+
 local util = require "lspconfig.util"
 
+-- Fix clashing with tsserver
 lspconfig.denols.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
   root_dir = function(fname)
     return util.root_pattern("deno.json", "deno.jsonc")(fname)
   end,
@@ -23,12 +35,19 @@ lspconfig.denols.setup {
 }
 -- fix Tsserver clashing with deno
 lspconfig.tsserver.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
   root_dir = function(fname)
     return util.find_package_json_ancestor(fname)
   end,
 }
 
+-- Rust Fix
 lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
   settings = {
     ["rust-analyzer"] = {
       assist = {
@@ -45,7 +64,11 @@ lspconfig.rust_analyzer.setup {
   },
 }
 
+-- Yaml with github configs
 lspconfig.yamlls.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
   settings = {
     yaml = {
       schemas = {
@@ -54,10 +77,3 @@ lspconfig.yamlls.setup {
     },
   },
 }
-
-lspconfig.volar.setup {
-  filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-}
-
---
--- lspconfig.pyright.setup { blabla}

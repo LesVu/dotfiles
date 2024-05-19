@@ -11,7 +11,7 @@ M.treesitter = {
     "bash",
     "json",
     "yaml",
-    "c",
+    -- "c",
     "markdown",
     "markdown_inline",
   },
@@ -39,22 +39,6 @@ M.mason = {
     "json-lsp",
     "yaml-language-server",
     -- "rust-analyzer",
-  },
-}
-
--- git support in nvimtree
-M.nvimtree = {
-  git = {
-    enable = true,
-  },
-
-  renderer = {
-    highlight_git = true,
-    icons = {
-      show = {
-        git = true,
-      },
-    },
   },
 }
 

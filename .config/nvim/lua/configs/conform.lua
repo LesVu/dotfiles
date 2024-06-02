@@ -4,6 +4,7 @@ local options = {
     javascript = { "prettierd" },
     typescript = { "prettierd" },
     sh = { "shfmt" },
+    python = { "black" },
   },
 
   format_on_save = {
@@ -25,6 +26,10 @@ local options = {
 
     shfmt = {
       prepend_args = { "-i", "2", "-ci", "-bn" },
+    },
+
+    black = {
+      command = os.getenv "HOME" .. "/.local/share/nvim/mason/packages/black/venv/bin/black",
     },
   },
 }

@@ -14,12 +14,11 @@ M.treesitter = {
     -- "c",
     "markdown",
     "markdown_inline",
+    "python",
   },
   indent = {
     enable = true,
-    disable = {
-      "python",
-    },
+    disable = {},
   },
 }
 
@@ -39,6 +38,10 @@ M.mason = {
     "json-lsp",
     "yaml-language-server",
     -- "rust-analyzer",
+
+    "pyright",
+    "black",
+    -- "flake8",
   },
 }
 

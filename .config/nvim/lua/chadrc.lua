@@ -4,7 +4,7 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
+M.base46 = {
   theme = "onedark",
   theme_toggle = { "onedark", "oceanic-next" },
 }

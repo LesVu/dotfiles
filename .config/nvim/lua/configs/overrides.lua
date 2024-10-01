@@ -22,27 +22,27 @@ M.treesitter = {
   },
 }
 
-M.mason = {
-  ensure_installed = {
-    -- lua stuff
-    "lua-language-server",
-    "stylua",
-
-    -- web dev stuff
-    "css-lsp",
-    "html-lsp",
-    "typescript-language-server",
-    -- "deno",
-    "prettierd",
-    "bash-language-server",
-    "json-lsp",
-    "yaml-language-server",
-    -- "rust-analyzer",
-
-    "pyright",
-    "black",
-    -- "flake8",
-  },
-}
+-- M.mason = {
+--   ensure_installed = {
+--     -- lua stuff
+--     "lua-language-server",
+--     "stylua",
+--
+--     -- web dev stuff
+--     "css-lsp",
+--     "html-lsp",
+--     "typescript-language-server",
+--     -- "deno",
+--     "prettierd",
+--     "bash-language-server",
+--     "json-lsp",
+--     "yaml-language-server",
+--     -- "rust-analyzer",
+--
+--     "pyright",
+--     "black",
+--     -- "flake8",
+--   },
+-- }
 
 return M

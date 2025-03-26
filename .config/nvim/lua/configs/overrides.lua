@@ -11,38 +11,16 @@ M.treesitter = {
     "bash",
     "json",
     "yaml",
-    -- "c",
+    "c",
     "markdown",
     "markdown_inline",
     "python",
+    "rust",
   },
   indent = {
     enable = true,
     disable = {},
   },
 }
-
--- M.mason = {
---   ensure_installed = {
---     -- lua stuff
---     "lua-language-server",
---     "stylua",
---
---     -- web dev stuff
---     "css-lsp",
---     "html-lsp",
---     "typescript-language-server",
---     -- "deno",
---     "prettierd",
---     "bash-language-server",
---     "json-lsp",
---     "yaml-language-server",
---     -- "rust-analyzer",
---
---     "pyright",
---     "black",
---     -- "flake8",
---   },
--- }
 
 return M

@@ -5,8 +5,34 @@
 local M = {}
 
 M.base46 = {
-  theme = "onedark",
-  theme_toggle = { "onedark", "oceanic-next" },
+  theme = "catppuccin",
+  theme_toggle = { "onedark", "oceanic-next", "catppuccin" },
 }
+
+M.nvdash = {
+  load_on_startup = true,
+
+  header = {
+    '         .-"      "-.  ',
+    "       /            \\   ",
+    "      |              |   ",
+    "      |  +      +    |   ",
+    "      |              |   ",
+    "       \\            /   ",
+    '         "-.____.-"    ',
+    "                         ",
+    "         /   |   \\      ",
+    "  (e-)--O    |    O--(e-)",
+    "         \\   |   /      ",
+    "            (n)          ",
+  },
+}
+
+-- M.nvdash = { load_on_startup = true }
+-- M.ui = {
+--       tabufline = {
+--          lazyload = false
+--      }
+--}
 
 return M

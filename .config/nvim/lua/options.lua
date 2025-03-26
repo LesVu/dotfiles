@@ -9,6 +9,10 @@ require "nvchad.options"
 -- require("luasnip.loaders.from_vscode").lazy_load { paths = { "./configs/snippets" } }
 vim.opt.laststatus = 3
 
+vim.g.markdown_fenced_languages = {
+  "ts=typescript",
+}
+
 vim.api.nvim_create_user_command("FormatDisable", function(args)
   if args.bang then
     -- FormatDisable! will disable formatting just for this buffer

@@ -10,14 +10,11 @@ local servers = {
   clangd = { mason = false },
 
   denols = {
-    root_dir = function(fname)
-      return util.root_pattern("deno.json", "deno.jsonc")(fname)
-    end,
+    root_dir = util.root_pattern("deno.json", "deno.jsonc"),
   },
   ts_ls = {
-    root_dir = function(fname)
-      return util.find_package_json_ancestor(fname)
-    end,
+    root_dir = util.root_pattern "package.json",
+    single_file_support = false,
   },
   rust_analyzer = {
     settings = {
